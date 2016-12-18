@@ -109,7 +109,7 @@ public class FindBookInfo {
 			System.out.println(s);
 		}
 //		System.out.println(keySet);
-		System.out.println("Please enter the specific title: ");
+		System.out.println("Please enter the specific title: \n");
 		Scanner in = new Scanner(System.in);
 		finalTitle = in.nextLine(); 
 		in.close();

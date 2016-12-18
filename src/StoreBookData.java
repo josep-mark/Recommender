@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 /**
- * This class takes in the book data set as an ArrayListof strings
+ * This class takes in the book data set
  * It separates the csv values and stores them to hashmaps
  * @author Joseph
  *

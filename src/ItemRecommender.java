@@ -31,11 +31,12 @@ public class ItemRecommender {
 	 * @throws IOException
 	 * @throws TasteException
 	 */
-	public ItemRecommender(String isbn1, HashMap<String, String> idToIsbn, HashMap<String, String> isbnToId, HashMap<String, String> titles) throws IOException, TasteException{
+	public ItemRecommender(String isbn1, HashMap<String, String> idToIsbn, HashMap<String, String> isbnToId, HashMap<String, String> userTitles) throws IOException, TasteException{
 		isbn = isbn1;
 		isbnToIdMap = isbnToId;
 		idToIsbnMap = idToIsbn;
-		isbnTitleMap = titles;
+		isbnTitleMap = userTitles;
+		titles = new ArrayList<String>();
 		isbnId = Long.parseLong(isbnToIdMap.get(isbn));
 		getRecommendations();
 	}
