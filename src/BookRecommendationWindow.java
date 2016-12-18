@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class BookRecommendationWindow extends JFrame {
 	
-	private ArrayList<JLabel> books;
+	private ArrayList<JLabel> books = new ArrayList<JLabel>();
 	private JLabel book;
 	private JButton closebutton;
 	

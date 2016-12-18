@@ -56,7 +56,12 @@ public class ItemRecommender {
 			String bookId = Long.toString(id);
 			String isbn = idToIsbnMap.get(bookId);
 			String title = isbnTitleMap.get(isbn);
-			titles.add(title);
+			if(title == null){
+				continue;
+			}
+			else{
+				titles.add(title);
+			}
 		}
 	}
 	
