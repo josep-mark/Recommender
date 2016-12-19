@@ -38,12 +38,13 @@ public class ItemRecommender {
 		isbnTitleMap = userTitles;
 		titles = new ArrayList<String>();
 		isbnId = Long.parseLong(isbnToIdMap.get(isbn));
+		System.out.println(isbnId);
 		getRecommendations();
 	}
 	
 	/**
 	 * Method to find book recommendations based on the given book isbn
-	 * Uses Apavhe mahout item based recommender
+	 * Uses Apache mahout item based recommender
 	 * @throws IOException
 	 * @throws TasteException
 	 */

@@ -25,37 +25,37 @@ public class SaveUserData {
 		user = newUser;
 		userBooks = user.getBookLibrary();
 		id = user.getId();
+		System.out.println(id);
 		holder = new ArrayList<String>();
 		save();
 	}
 	
 	private void save(){		
-		String data = id + ",";
+		String data = id;
 		String l = "";
-		String m = "";
 		String q = "";
 		for(Book b : userBooks){
 			l = b.getIsbn();
-			m = b.getRating();
-			q = l + "," + m + ",";
-			data += q;
+			if(l.isEmpty()){
+				continue;
+			}
+			else{
+				q ="," + l;
+				data += q;
+			}
 		}
 		data += "\n";
+		System.out.println(data);
 		
 		try{
 			BufferedReader fr = new BufferedReader(new FileReader("data/userdata.csv"));
-			BufferedWriter file = new BufferedWriter(new FileWriter("data/userdata.csv"));
 			
 			String line;
 			while((line = fr.readLine()) != null){
 				holder.add(line);
-//				String[] info = line.split(",");
-//				if (info[0] == id){
-//					file.write(data);
-//				}
 				
 			}
-			file.close();
+			fr.close();
 		}
 		catch(Exception e){
 			e.printStackTrace();
@@ -67,11 +67,13 @@ public class SaveUserData {
 	
 	private void replaceLine(String data){
 		boolean alreadyInFile = false;
-		for(String s : holder){
-			String[] test = s.split(",");
-			if (test[0].equals(id)){
+		for(int i = 0; i < holder.size(); i++){
+			String test = holder.get(i);
+			String[] split = test.split(",");
+			if (split[0].equals(id)){
+				System.out.println("Test Hit");
 				alreadyInFile = true;
-				s = data;
+				holder.set(i, data);
 			}
 		}
 		
@@ -85,6 +87,7 @@ public class SaveUserData {
 			BufferedWriter file = new BufferedWriter(new FileWriter("data/userdata.csv"));
 			
 			for (String s : holder){
+				System.out.println(s);
 				file.write(s);
 				
 			}

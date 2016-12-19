@@ -29,6 +29,9 @@ public class BookRatingWindow extends JFrame{
 		
 		ArrayList<String> bookmatch = matches.getMatches();
 		RecommendationDisplay display = new RecommendationDisplay(bookmatch);
+		display.setVisible(true);
+		display.setSize(250, 400);
+		display.setTitle("Please enter one of these options");
 		
 		String exacttitle = JOptionPane.showInputDialog("Enter the exact book title match");
 		String rate = JOptionPane.showInputDialog("Enter your rating out of 10");

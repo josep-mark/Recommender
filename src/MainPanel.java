@@ -20,7 +20,7 @@ public class MainPanel extends JFrame {
 		username = Integer.toString(account);
 		LoadUserData getData = new LoadUserData(username);
 		user = getData.getUser();
-		
+				
 		setLayout(new FlowLayout());
 		label1 = new JLabel ("Welcome, user " + username);
 		add(label1);
@@ -31,14 +31,14 @@ public class MainPanel extends JFrame {
 		button2 = new JButton("Rate your books");
 		add(button2);
 		
-		button3 = new JButton("Write a review");
-		add(button3);
-		
 		button4 = new JButton("Get a book recommendation");
 		add(button4);
 		
 		button5 = new JButton("Get a user based recommendation");
 		add(button5);
+		
+		button3 = new JButton("Saving your books");
+		add(button3);		
 		
 		event e = new event();
 		button1.addActionListener(e);
@@ -77,12 +77,11 @@ public class MainPanel extends JFrame {
 	}
 	
 	public class event3 implements ActionListener{
-		public void actionPerformed(ActionEvent g){
-			label1.setText("Writing a review");
-			
+		public void actionPerformed(ActionEvent f){
+			SaveUserData savedata = new SaveUserData(user);
 //more actions			
 		}		
-	}
+	}	
 	
 	public class event4 implements ActionListener{
 		public void actionPerformed(ActionEvent h){
@@ -100,6 +99,13 @@ public class MainPanel extends JFrame {
 	public class event5 implements ActionListener{
 		public void actionPerformed(ActionEvent i){
 			label1.setText("Get a user based recommendation");
+			BookRatingRecommendation userbased = new BookRatingRecommendation(user);
+			ArrayList<String> result = userbased.RateRecommend();
+			BookRecommendationWindow tryout = new BookRecommendationWindow(result);
+			tryout.setVisible(true);
+			tryout.setSize(300, 400);
+			tryout.setTitle("Here are the user based book recommendation");
+			
 //more actions			
 		}		
 	}

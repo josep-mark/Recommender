@@ -26,9 +26,8 @@ public class FindBookFromIsbn {
 			String line;
 			while((line = reader.readLine()) != null){
 				String[] info = line.split(",");
-				String isbnTest = finalTitle.toLowerCase();
 				String test = info[0];
-				if(test.equalsIgnoreCase(isbnTest)){
+				if(test.equalsIgnoreCase(isbn)){
 					isbn = info[0];
 					title = info[1];
 					author = info[2];

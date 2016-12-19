@@ -27,6 +27,7 @@ public class LoadUserData {
 		user = new User(id);
 		bookIsbn = new ArrayList<String>();
 		getData();
+		findBooks();
 	}
 	
 	private void getData(){
@@ -37,12 +38,9 @@ public class LoadUserData {
 			String line;
 			while((line = fr.readLine()) != null){
 				String[] info = line.split(",");
-				if (info[0] == id){
-					for(int i = 1; i< info.length; i += 2){
+				if (info[0].equals(id)){
+					for(int i = 1; i< info.length; i++){
 						bookIsbn.add(info[i]);
-					}
-					for(int i = 2; i < info.length; i += 2){
-						ratings.add(info[i]);
 					}
 				}
 				
@@ -56,8 +54,8 @@ public class LoadUserData {
 	
 	
 	private void findBooks(){
-		for (String s: bookIsbn){
-			FindBookFromIsbn book = new FindBookFromIsbn(s);
+		for (int i = 0; i < bookIsbn.size(); i++){
+			FindBookFromIsbn book = new FindBookFromIsbn(bookIsbn.get(i));
 			Book newBook = book.getBook();
 			user.addBookToLibrary(newBook);
 		}
