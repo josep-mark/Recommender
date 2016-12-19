@@ -1,6 +1,7 @@
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -25,6 +26,7 @@ public class UserRecommender {
 	private List<RecommendedItem> recommendations; 
 	private HashMap<String, String> isbnIdMap;
 	private HashMap<String, String> isbnTitleMap;
+	private ArrayList<String> titles;
 	
 	/**
 	 * Constructor takes in id as a string
@@ -39,6 +41,7 @@ public class UserRecommender {
 		userID = Long.parseLong(newUserID);
 		isbnIdMap = isbnids;
 		isbnTitleMap = isbnTitles;
+		titles = new ArrayList<String>();
 		getRecommendations();
 	}
 	
@@ -56,7 +59,11 @@ public class UserRecommender {
 		UserBasedRecommender recommender = new GenericUserBasedRecommender(model, neighborhood, similarity);
 		recommendations = recommender.recommend(userID, 5);
 		for (RecommendedItem recommendation : recommendations) {
-			  System.out.println(recommendation);
+			long isbnId = recommendation.getItemID();
+			String id = Long.toString(isbnId);
+			String isbn = isbnIdMap.get(id);
+			String title = isbnTitleMap.get(isbn);
+			titles.add(title);
 			}
 	}
 	
@@ -74,6 +81,14 @@ public class UserRecommender {
 			String title = isbnTitleMap.get(isbn);
 			System.out.println(title);
 		}
+	}
+	
+	/**
+	 * Getter method for the titles of recommendations
+	 * @return titles array list of string
+	 */
+	public ArrayList<String> getTitles(){
+		return titles;
 	}
 
 }

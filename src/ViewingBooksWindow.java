@@ -13,11 +13,15 @@ public class ViewingBooksWindow extends JFrame {
 	private JLabel book;
 	private JButton closebutton;
 	private ArrayList<String> booklist = new ArrayList<String>();
-	
-	public ViewingBooksWindow(String username){
+	private ArrayList<Book> bookobject = new ArrayList<Book>(); 
+	public ViewingBooksWindow(User user){
 		
-		BookList list = new BookList(username);
-		booklist = list.getnames();
+		bookobject = user.getBookLibrary();
+		
+		for (Book object : bookobject){
+			String title = object.getTitle();
+			booklist.add(title);
+		}
 		
 		this.setSize(400, 400);
 		setLayout(new FlowLayout());
