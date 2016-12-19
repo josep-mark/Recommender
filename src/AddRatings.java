@@ -9,13 +9,13 @@ import java.util.ArrayList;
  *
  */
 public class AddRatings {
-	private ArrayList<String> rating;
+	private String[] rating;
 	
 	/**
 	 * Constructor
 	 * @param userRating ArrayList containing userid, book isbn, and rating 
 	 */
-	public AddRatings(ArrayList<String> userRating){
+	public AddRatings(String[] userRating){
 		rating = userRating;
 		add();
 	}
@@ -24,11 +24,11 @@ public class AddRatings {
 	/**
 	 * Append to the file using buffered writer
 	 */
-	private void add(){
+	public void add(){
 		
 		try{
 			BufferedWriter bw = new BufferedWriter(new FileWriter("data/book-ratingsV2.csv", true));
-			bw.write(rating.get(0)+ "," +rating.get(1) + "," + rating.get(2));
+			bw.write(rating[0]+ "," +rating[1] + "," + rating[2]);
 			bw.newLine();
 			bw.flush();
 			bw.close();

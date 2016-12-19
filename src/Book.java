@@ -13,7 +13,7 @@ public class Book {
 	private String pubYear;
 	private String frontCoverURL;
 	private String rating;
-	private String review;
+
 	
 	/**
 	 * Constructor for book class
@@ -89,21 +89,6 @@ public class Book {
 		return rating;
 	}
 
-	/**
-	 * Getter for the user review
-	 * @return String review
-	 */
-	public String getReview() {
-		return review;
-	}
-	
-	/**
-	 * Method to add a user review to the book data
-	 * @param rev String review to add
-	 */
-	public void addReview(String rev){
-		review = rev;
-	}
 	
 	/**
 	 * Method to add a rating to the book

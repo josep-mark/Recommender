@@ -14,9 +14,13 @@ public class MainPanel extends JFrame {
 	private JButton button4;
 	private JButton button5;
 	private String username;
+	private User user;
 	
 	public MainPanel(int account){
 		username = Integer.toString(account);
+		LoadUserData getData = new LoadUserData(username);
+		user = getData.getUser();
+		
 		setLayout(new FlowLayout());
 		label1 = new JLabel ("Welcome, user " + username);
 		add(label1);
@@ -66,7 +70,7 @@ public class MainPanel extends JFrame {
 	public class event2 implements ActionListener{
 		public void actionPerformed(ActionEvent f){
 			label1.setText("Rating a book");
-			BookRatingWindow trys = new BookRatingWindow();
+			BookRatingWindow trys = new BookRatingWindow(user);
 			trys.RateYourBook();
 //more actions			
 		}		

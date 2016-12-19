@@ -16,6 +16,7 @@ public class SaveUserData {
 	public SaveUserData(String id, ArrayList<Book> books){
 		user = id;
 		userBooks = books;
+		save();
 	}
 	
 	private void save(){
@@ -23,8 +24,10 @@ public class SaveUserData {
 		
 		obj.put(user, userBooks);
 		
+		
+		
 		try{
-			FileWriter file = new FileWriter("data/userdata.json");
+			FileWriter file = new FileWriter("data/");
 			file.write(obj.toString());
 			file.close();
 		}
