@@ -55,6 +55,10 @@ public class MainPanel extends JFrame {
 	public class event implements ActionListener{
 		public void actionPerformed(ActionEvent e){
 			label1.setText("Viewing your books");
+			ViewingBooksWindow viewbook = new ViewingBooksWindow(username);
+			viewbook.setVisible(true);
+			viewbook.setSize(250, 400);
+			viewbook.setTitle("Here are your book list");
 //more actions			
 		}		
 	}
