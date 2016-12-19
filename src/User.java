@@ -24,4 +24,8 @@ public class User {
 		return bookLibrary;
 	}
 	
+	public void addBookToLibrary(Book b){
+		bookLibrary.add(b);
+	}
+	
 }
