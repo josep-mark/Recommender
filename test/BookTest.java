@@ -6,12 +6,12 @@ import org.junit.Test;
 public class BookTest {
 
 	private Book book;
-	private String isbn;
-	private String title;
-	private String author;
-	private String pubYear;
-	private String publisher;
-	private String url;
+	private String isbn = "122332";
+	private String title = "A book";
+	private String author = "A writer";
+	private String pubYear = "1998";
+	private String publisher = "Random";
+	private String url = "http://awebsite";
 	
 	@Before
 	public void setup(){
