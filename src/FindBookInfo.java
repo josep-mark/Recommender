@@ -25,7 +25,7 @@ public class FindBookInfo {
 	
 	
 	public FindBookInfo(String theTitle){
-		title = theTitle;
+		finalTitle = theTitle;
 		getFinalBook();
 	}
 	

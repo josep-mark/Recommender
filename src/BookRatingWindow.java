@@ -25,9 +25,18 @@ public class BookRatingWindow extends JFrame{
 		
 	
 		String title = JOptionPane.showInputDialog("Enter the book title");
+		FindMatches matches = new FindMatches(title);
+		
+		ArrayList<String> bookmatch = matches.getMatches();
+		RecommendationDisplay display = new RecommendationDisplay(bookmatch);
+		
+		String exacttitle = JOptionPane.showInputDialog("Enter the exact book title match");
 		String rate = JOptionPane.showInputDialog("Enter your rating out of 10");
 		
-		String isbn = "";
+		FindBookInfo book1 = new FindBookInfo(exacttitle);
+		Book newBook = book1.getBook();
+		newBook.addRating(rate);
+		user.addBookToLibrary(newBook);
 		
 		ArrayList<Book> library = user.getBookLibrary();
 		boolean found = false;

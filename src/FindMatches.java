@@ -25,8 +25,8 @@ public class FindMatches {
 	private String frontCoverURL;
 	private ArrayList<String> books;
 	
-	public FindMatches(){
-		String theTitle = JOptionPane.showInputDialog("Enter the name of a book");
+	public FindMatches(String theTitle){
+		
 		title = theTitle;
 		bookMatches = new HashMap<String, String>();
 		books = new ArrayList<String>();
@@ -75,7 +75,7 @@ public class FindMatches {
 	}
 
 	/**
-	 * 
+	 * Getter method for the matches 
 	 */
 	public ArrayList<String> getMatches(){
 		return books;

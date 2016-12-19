@@ -28,9 +28,17 @@ private HashMap<String, String> isbnToIds;
 	
 	public ArrayList<String> BookInput() {
 		ArrayList<String> recommendation = new ArrayList<String>();
-		String bookname = JOptionPane.showInputDialog("Enter the name of a book");
+		String bookname = JOptionPane.showInputDialog("Enter the name of a book for the system to match");
 		
-		FindBookInfo findBook = new FindBookInfo(bookname);
+		FindMatches matches = new FindMatches(bookname);
+		ArrayList<String> options = matches.getMatches();
+		RecommendationDisplay display = new RecommendationDisplay(options);
+		display.setVisible(true);
+		display.setSize(250, 400);
+		display.setTitle("Please enter one of these options");
+		//
+		String bookname1 = JOptionPane.showInputDialog("Please enter exactly one of the options in the display window");
+		FindBookInfo findBook = new FindBookInfo(bookname1);
 		Book book = findBook.getBook();
 		ItemRecommender items;
 		try {
