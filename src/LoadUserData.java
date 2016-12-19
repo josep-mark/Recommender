@@ -11,7 +11,8 @@ import org.json.JSONObject;
 
 import scala.util.parsing.json.JSON;
 /**
- * This class finds the users data in a json file and loads their information
+ * This class finds the users data in a csv file and loads their information
+ * Data is from the isbn numbers
  * @author Joseph
  *
  */
@@ -22,6 +23,11 @@ public class LoadUserData {
 	private ArrayList<String> bookIsbn;
 	private ArrayList<String> ratings;
 	
+	/**
+	 * Constructor takes the user id
+	 * Then it creates a new object
+	 * @param userId
+	 */
 	public LoadUserData(String userId){
 		id = userId;
 		user = new User(id);
@@ -30,6 +36,9 @@ public class LoadUserData {
 		findBooks();
 	}
 	
+	/**
+	 * Get data method fills an array list with isbn numbers
+	 */
 	private void getData(){
 		
 		try{
@@ -53,6 +62,10 @@ public class LoadUserData {
 	}
 	
 	
+	/**
+	 * FindBooks uses the isbn numbers in our array list to get book information
+	 * Then adds those books to the users library
+	 */
 	private void findBooks(){
 		for (int i = 0; i < bookIsbn.size(); i++){
 			FindBookFromIsbn book = new FindBookFromIsbn(bookIsbn.get(i));

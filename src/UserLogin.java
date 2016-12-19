@@ -3,6 +3,13 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 
+/**
+ * This class can be called from the UserAccountInterface class 
+ * it will provide a way for user to log in to the system
+ * @author Ace
+ *
+ */
+
 public class UserLogin {
 
 	private HashMap<Integer, Integer> useraccount = new HashMap<Integer, Integer>();
@@ -10,6 +17,8 @@ public class UserLogin {
 	private Scanner scan;
 	private int username;
 	private int password;
+
+//the program first reads in the data base of usernames and passwords and store them in hashmaps	
 	
 	public UserLogin(){
 		try{
@@ -20,6 +29,8 @@ public class UserLogin {
 			System.out.println("system error, please contact provider");
 		}
 	}
+
+//then the program takes in the user inputs of username and password and look for matches	
 	
 	public int userlogin(int accountinput, int passwordinput){
 		

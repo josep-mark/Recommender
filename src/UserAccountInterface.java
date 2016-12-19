@@ -2,12 +2,23 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
+/**
+ * This is the useraccount interface
+ * which is the first thing that pop out when user run the program
+ * it gives the user choices of log in, if the user already has an username and password
+ * or it allows user to create a new username and password (all integers) 
+ * it is recommended that after the user creates a new account, he/she should close the program and run it again to log in
+ * @author Ace
+ *
+ */
 public class UserAccountInterface extends JFrame {
 
 	private JLabel label1;
 	private JButton button1;
 	private JTextField text1;
 	private JButton button2;
+
+//here it sets the JFrame for display	
 	
 	public UserAccountInterface(){
 		setLayout(new FlowLayout());
@@ -19,6 +30,8 @@ public class UserAccountInterface extends JFrame {
 		
 		button2 = new JButton("Create New Account");
 		add(button2);
+
+//setting actions for the 2 buttons above		
 		
 		event e = new event();
 		button1.addActionListener(e);
@@ -26,6 +39,8 @@ public class UserAccountInterface extends JFrame {
 		event2 f = new event2();
 		button2.addActionListener(f);
 	}
+
+//this action allows the user to log in to the system	
 	
 	public class event implements ActionListener{
 		public void actionPerformed(ActionEvent e){
@@ -34,6 +49,8 @@ public class UserAccountInterface extends JFrame {
 			trys.UserLogin();
 		}		
 	}
+
+//this action allows the user to create a new account	
 	
 	public class event2 implements ActionListener{
 		public void actionPerformed(ActionEvent f){
@@ -42,6 +59,8 @@ public class UserAccountInterface extends JFrame {
 			tryss.NewUser();
 		}		
 	}
+
+//here is the main method. I know, it is very hard to find	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

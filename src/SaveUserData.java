@@ -9,8 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
- * This is a class to save user data in a json file
- * It uses the Maven JSON simple to create a json file
+ * This is a class to save user data in a csv file
  * @author Joseph
  *
  */
@@ -21,15 +20,22 @@ public class SaveUserData {
 	ArrayList<String> holder;
 	
 	
+	/**
+	 * Constructor takes in a user object
+	 * @param newUser
+	 */
 	public SaveUserData(User newUser){
 		user = newUser;
 		userBooks = user.getBookLibrary();
 		id = user.getId();
-		System.out.println(id);
 		holder = new ArrayList<String>();
 		save();
 	}
 	
+	/**
+	 * Save method puts the users data into a readable format
+	 * 
+	 */
 	private void save(){		
 		String data = id;
 		String l = "";
@@ -45,7 +51,7 @@ public class SaveUserData {
 			}
 		}
 		data += "\n";
-		System.out.println(data);
+		
 		
 		try{
 			BufferedReader fr = new BufferedReader(new FileReader("data/userdata.csv"));

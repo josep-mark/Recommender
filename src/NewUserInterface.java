@@ -5,6 +5,13 @@ import java.awt.FlowLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
+/**
+ * This class asks for user inputs for a new username and password
+ * @author Ace
+ *
+ */
+
+
 public class NewUserInterface extends JFrame{
 
 	public NewUserInterface(){
@@ -13,12 +20,19 @@ public class NewUserInterface extends JFrame{
 	}
 	
 	public int NewUser(){
+
+//contruct the panels that reads user input		
 		
 		String username = JOptionPane.showInputDialog("Enter new username");
 		String password = JOptionPane.showInputDialog("Enter new password");
 		
+//convert the string input into integers		
+		
 		int us = Integer.parseInt(username);
 		int ps = Integer.parseInt(password);
+
+//then it calls for the create user class and give it the user inputs		
+//it also checks for if the username is already in the database
 		
 		CreateUser create = new CreateUser();
 		int result = create.CreatNewUser(us, ps);

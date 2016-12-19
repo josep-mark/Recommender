@@ -1,3 +1,6 @@
+/**
+ * Class to Find book information from the book crossing data set given an isbn number
+ */
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -14,11 +17,19 @@ public class FindBookFromIsbn {
 	private String pubYear;
 	private String frontCoverURL;
 	
+	/**
+	 * Constructor takes in isbn and calss the find book class
+	 * @param theIsbn
+	 */
 	public FindBookFromIsbn(String theIsbn){
 		isbn = theIsbn;
 		findMatch();
 	}
 	
+	/**
+	 * Find Match iterates through the book crossing dataset and looks for a matching isbn number
+	 * fills fields for a book object
+	 */
 	private void findMatch(){
 		try{
 			BufferedReader reader = new BufferedReader(new FileReader("data/books.csv"));
