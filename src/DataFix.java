@@ -1,4 +1,8 @@
-
+/**
+ * Class to fix the dataset by Book Crossing
+ * Removes quotation marks, replaces ; with ,
+ * Replaces / and random And word in the file
+ */
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -13,12 +17,21 @@ public class DataFix {
 	private String inputFile;
 	private String outputFile;
 	
+	/**
+	 * Constructor
+	 * @param inFile to read
+	 * @param outFile to write to
+	 */
 	public DataFix(String inFile, String outFile){
 		inputFile = inFile;
 		outputFile = outFile;
 		fix();
 	}
 	
+	
+	/**
+	 * Fix method using buffered reader and writer
+	 */
 	private void fix(){
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader(inputFile));

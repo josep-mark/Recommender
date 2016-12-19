@@ -5,6 +5,10 @@ Our project is a book recommender system. It uses Apache mahouts recommender eng
 recommendations to users. The Recommender uses Book Crossing's database of user interactions and books
 to find recommendations for a user.
 
+Due to a last minute mistake on github we actually created a new repository to work with
+The link is below
+https://github.com/josep-mark/Recommender
+
 One important thinhg is that userIds must be numbers of eight digits or more
 
 To be fair I think the book crossing database was not the best choice. It has the right format for the recommender engine
@@ -36,12 +40,15 @@ Then it uses the Apache Mahout item based recommender to return 5 recommendation
 
 Get user recommendations
 This uses Apache Mahouts user based recommender to find five recommendations specific to the user currently logged in
+In our tests a new users results did not always return recommendations
+Using the userBased recommender in the book tester class did return results though
 
 Save your books 
 This option saves the books a user has rated to the csv that contains the users information
 This way the user can see the books they have rated on previous log ins
 
-
+Launching the program
+Use the main method in userAccountInterface to launch the program
 
 
 The back end and Apache Mahout.

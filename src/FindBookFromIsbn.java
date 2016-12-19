@@ -60,7 +60,7 @@ public class FindBookFromIsbn {
 	
 	/**
 	 * Get book from Isbn
-	 * @return
+	 * @return Book found using isbn
 	 */
 	public Book getBook(){
 		Book newBook = new Book(isbn, title, author, publisher, pubYear, frontCoverURL);

@@ -27,7 +27,7 @@ public class Book {
 	public Book(String newISBN, String newTitle, String newAuthor, String newPub, String newPubYear, String url){
 		isbn = newISBN;
 		title = newTitle;
-		author = newTitle;
+		author = newAuthor;
 		publisher = newPub;
 		pubYear = newPubYear;
 		frontCoverURL = url;

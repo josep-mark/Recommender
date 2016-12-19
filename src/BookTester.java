@@ -18,15 +18,15 @@ public class BookTester {
 		HashMap<String, String> idToIsbn = data.getIdToIsbn();
 		HashMap<String, String> isbnToIds = data.getIsbnToIds();
 		
-//		String userId = "107718";
-//		UserRecommender userRec = new UserRecommender(userId, isbnToIds, isbnToTitle);
-//		userRec.printRecommendations();
+		String userId = "107718";
+		UserRecommender userRec = new UserRecommender(userId, isbnToIds, isbnToTitle);
+		userRec.printRecommendations();
 		
-		FindBookInfo findBook = new FindBookInfo("Great Expectations");
-		Book book = findBook.getBook();
+//		FindBookInfo findBook = new FindBookInfo("Great Expectations");
+//		Book book = findBook.getBook();
 //		String isbn = "0440118204";
-		ItemRecommender items = new ItemRecommender(book.getIsbn(), idToIsbn, isbnToIds, isbnToTitle);
-		items.printRecommendations();
+//		ItemRecommender items = new ItemRecommender(book.getIsbn(), idToIsbn, isbnToIds, isbnToTitle);
+//		items.printRecommendations();
 		
 		
 
